@@ -7,7 +7,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: joshtynjala/setup-apache-flex-action@v2
+      - uses: joshtynjala/setup-apache-flex-action@master
         with:
           flex-version: "4.16.1"
           air-version: "50.0"
