@@ -1,0 +1,16 @@
+name: Compile SWF
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: joshtynjala/setup-apache-flex-action@v2
+        flex-version: "4.16.1"
+        air-version: "50.0"
+        accept-air-license: true
+      - name: Compile SWF
+        run: |
+          mxmlc -output bin/GithubActionsExample.swf src/Main.mxml
